@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <persistence-unit name="Eclipselink_JPA" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>jdbc/Point</jta-data-source>
+
+        <class>lab9.Model.PointEntity</class>
+        <class>lab9.Model.User</class>
+        <class>lab9.Model.Token</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+            <property name="javax.persistence.jdbc.user" value="Shureek"/>
+            <property name="javax.persistence.jdbc.password" value="11111"/>
+            <!--
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:orbis"/>
+            <property name="javax.persistence.jdbc.user" value="s207545"/>
+            <property name="javax.persistence.jdbc.password" value="qgs247"/>
+            -->
+            <!--<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>-->
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>
